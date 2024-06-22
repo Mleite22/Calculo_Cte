@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Lista de Compras</title>
+</head>
+
+<body>
+    <header>
+        <h1>Calculo de Frete Por CT-e</h1>
+    </header>
+
+    <nav>
+        
+        <div class="inputs_itens">
+            <label class="text-label" for="item">Valor do Frete:</label>
+            <input type="number" id="item" class="inputItem">
+            <label class="text-label" for="preco">Peso:</label>
+            <input type="number" id="preco" class="inputPreco" >
+            <button class="buttonClik" onclick="adicionarItem()">Adicionar</button>
+        </div>
+
+        <div class="lista_principal">
+            <h2>Valor Por CTe</h2>
+            <ul id="listaDeCompras">
+                <!-- Itens da lista de compras serão inseridos aqui -->
+            </ul>
+
+           
+        </div>
+        <div class="reajutados">
+            <h2>Valor do Frete</h2>
+            <ul id="reajuteList">
+                <!-- Valores reajustados serão inseridos aqui-->
+            </ul>
+
+            
+        </div>
+    </nav>
+    <div class="totais">
+        
+        <div class="totaisPeso">
+            <p>Total do Peso: <span id="total"></span></p>
+        </div>
+        <div class="totaisReajustados">
+            <p>Total %: <span id="totalReajustado"></span></p>
+            <!-- <p>Total CTE: <span id="totalCte"></span></p> -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
