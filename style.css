@@ -68,13 +68,6 @@ nav{
     flex: auto; 
 }
 
-footer, .roda-pe{
-    margin-top: 10px;
-    font-size: 15px;
-    font-weight: 300px;
-    color: white;
-}
-
 .inputPreco, .inputItem{
     width: 10%;
     height: 30px;
@@ -139,8 +132,9 @@ footer, .roda-pe{
     margin-left: 10px;
 }
 
-
-
-/* li{
-    list-style: none;
-} */
+.roda-pe{
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 300px;
+    color: white;
+}
