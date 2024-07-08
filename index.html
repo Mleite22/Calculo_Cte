@@ -20,9 +20,9 @@
         
         <div class="inputs_itens">
             <label class="text-label" for="item">Valor do Frete:</label>
-            <input type="number" id="item" class="inputItem">
+            <input type="number" id="item" class="inputItem" placeholder="Sem ponto">
             <label class="text-label" for="preco">Peso:</label>
-            <input type="number" id="preco" class="inputPreco" >
+            <input type="number" id="preco" class="inputPreco" placeholder="Sem ponto">
             <button class="buttonClik" onclick="adicionarItem()">Adicionar</button>
         </div>
 
@@ -49,10 +49,17 @@
             <p>Total do Peso: <span id="total"></span></p>
         </div>
         <div class="totaisReajustados">
+            <p>Total do Frete: <span id="totalCte"></span></p>
             <p>Total %: <span id="totalReajustado"></span></p>
-            <!-- <p>Total CTE: <span id="totalCte"></span></p> -->
         </div>
+        
     </div>
+
+    <footer>
+        <div class="roda-pe">
+            &copy;Marcos Lopes
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

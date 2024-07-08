@@ -59,6 +59,9 @@ precoInput.addEventListener('keypress', function (event) {
         exibirTotalDaCompra();
 
         calcularPercent();
+
+        calcularTotalReajustado();
+        
     }
 })
 
@@ -78,14 +81,16 @@ function calcularPercent() {
     //exibir a lista
     let reajuste = document.getElementById("reajuteList");
     reajuste.innerHTML = "";
+    
 
     const valor_fixo = parseFloat(itemInput.value); 
 
+    //Função para calcular e exibir o total
     const total = reajuteList.reduce((valorItem, valorLista) => valorItem + valorLista.preco, 0);
-    
     let calc = valor_fixo / total;
     let totalElement = document.getElementById("totalReajustado");
     totalElement.textContent = calc.toFixed(3);
+    
 
     //Calcula os valores entre as listas para achar o porcentual
     reajuteList.forEach((itens) => {
@@ -93,11 +98,22 @@ function calcularPercent() {
         listReajust.textContent = Math.round(`${(itens.preco * calc) / 100 * 125 + calc - 0.1}`) ;
         reajuste.appendChild(listReajust);   
     })
+
 }
 
-// Função para calcular e exibir o total da compra
+// Função para calcular e exibir o total da lista
 function exibirTotalDaCompra() {
     const total = listaDeCompras.reduce((valorItem, valorLista) => valorItem + valorLista.preco, 0);
     const totalElement = document.getElementById("total");
     totalElement.textContent = total.toFixed();
 }
+
+//Função calcula e exibir o total da lista
+function calcularTotalReajustado() {
+    const valorFixo = parseFloat(itemInput.value);
+    const total = listaDeCompras.reduce((valorItem, valorLista) => valorItem + valorLista.preco, 0);
+    const calc = valorFixo / total;
+    const totalReajustado = listaDeCompras.map((item) => (item.preco * calc) / 100 * 125 + calc - 0.1);
+    const totalReajustadoElement = document.getElementById("totalCte");
+    totalReajustadoElement.textContent = totalReajustado.reduce((a, b) => a + b, 0).toFixed();
+  }
