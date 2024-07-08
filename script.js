@@ -113,7 +113,7 @@ function calcularTotalReajustado() {
     const valorFixo = parseFloat(itemInput.value);
     const total = listaDeCompras.reduce((valorItem, valorLista) => valorItem + valorLista.preco, 0);
     const calc = valorFixo / total;
-    const totalReajustado = listaDeCompras.map((item) => (item.preco * calc) / 100 * 125 + calc - 0.1);
+    const totalFrete = listaDeCompras.map((item) => (item.preco * calc) / 100 * 125 + calc - 0.1);
     const totalReajustadoElement = document.getElementById("totalCte");
-    totalReajustadoElement.textContent = totalReajustado.reduce((a, b) => a + b, 0).toFixed();
+    totalReajustadoElement.textContent = totalFrete.reduce((a, b) => a + b, 0).toFixed();
   }
